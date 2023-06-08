@@ -2,9 +2,9 @@ import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { darkTheme } from "./themes";
 import { StyledSafeArea } from "./styles";
-import { DailyStatus } from "./src/components/DailyStatus";
-import { DaysList } from "./src/components/DaysList";
 import { DatesProvider } from "./src/contexts/Dates";
+import { HomePage } from "./src/pages/Home";
+// import { DaysProvider } from "./src/contexts/Days";
 
 export default function App() {
   return (
@@ -13,8 +13,7 @@ export default function App() {
         <DatesProvider>
           <StatusBar />
           <StyledSafeArea>
-            <DaysList />
-            <DailyStatus />
+            <HomePage />
           </StyledSafeArea>
         </DatesProvider>
       </ThemeProvider>

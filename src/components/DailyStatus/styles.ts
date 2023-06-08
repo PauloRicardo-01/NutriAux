@@ -12,15 +12,11 @@ export const DailyStatusContainer = styled.View`
   border-radius: 20px;
 `;
 
-export const DailyText = styled.Text`
-  color: ${(props: any) => props.theme.colors.text};
-`;
-
 export const DailyNutrientsContainer = styled.View`
   align-items: center;
   justify-content: center;
   flex-grow: 1;
   height: 100%;
   gap: 10px;
-  padding: 0 10px 16px 20px;
+  padding: 0 2px 16px 8px;
 `;

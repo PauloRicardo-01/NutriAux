@@ -34,6 +34,7 @@ export const DayText = styled.Text<DayProps>`
   height: 22px;
   padding-top: 1px;
   text-align: center;
+  color: ${(props: any) => props.theme.colors.text};
   background-color: ${(props: any) =>
     props.selected ? props.theme.colors.background : "transparent"};
   border-radius: 50px;
@@ -48,6 +49,7 @@ export const ChangeWeekButton = styled.TouchableOpacity`
 `;
 
 export const ChangeWeekButtonText = styled.Text`
-  font-size: 48px;
+  font-size: 28px;
   font-weight: 100;
+  color: ${(props: any) => props.theme.colors.text};
 `;

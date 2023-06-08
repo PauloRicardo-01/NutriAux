@@ -27,25 +27,25 @@ export function DaysList() {
         <ChangeWeekButtonText>&lt;</ChangeWeekButtonText>
       </ChangeWeekButton>
       <DaysListDays>
-        {daysLetters.map((letter, i) => {
+        {daysLetters.map((letter, index) => {
           return (
             <DaysListButton
-              key={i}
-              onPress={() =>
-                currentWeek[i]?.getFullYear() !== 1899
-                  ? selectDay(i, currentWeek[i]?.getDate())
-                  : {}
-              }
+              key={index}
+              onPress={() => {
+                currentWeek[index]?.substring(6, 10) !== "0001" &&
+                currentWeek[index] !== ""
+                  ? selectDay(index, currentWeek[index])
+                  : {};
+              }}
             >
               <DayText>{letter}</DayText>
               <DayText
                 selected={
-                  selectedIndex === i &&
-                  selectedDay === currentWeek[i]?.getDate()
+                  selectedIndex === index && selectedDay === currentWeek[index]
                 }
               >
-                {currentWeek[i]?.getFullYear() !== 1899
-                  ? currentWeek[i]?.getDate()
+                {currentWeek[index]?.substring(6, 10) !== "0001"
+                  ? currentWeek[index]
                   : ""}
               </DayText>
             </DaysListButton>

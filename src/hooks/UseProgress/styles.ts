@@ -28,7 +28,6 @@ export const ProgressSvgCircle = styled(Circle)<ProgressCircleProps>`
   stroke: ${(props: any) => props.stroke ?? props.theme.colors.primary};
   translate: 5px;
   stroke-dasharray: 377px;
-  stroke-dashoffset: ${(props: any) => props.offset};
 `;
 
 export const ProgressTextContainer = styled.View`
@@ -42,10 +41,12 @@ export const ProgressTextContainer = styled.View`
 export const ProgressTextTitle = styled.Text`
   font-size: 20px;
   font-weight: 700;
+  color: ${(props: any) => props.theme.colors.text};
 `;
 
 export const ProgressTextSubtitle = styled.Text`
   font-size: 12px;
+  color: ${(props: any) => props.theme.colors.text};
 `;
 
 // *** Progress Bar ***
@@ -61,7 +62,7 @@ export const ProgressBarContainer = styled.View<ProgressBarContainerProps>`
 
 export const ProgressBarTitle = styled.Text`
   width: 100%;
-  color: ${(props: any) => props.theme.colors.text};
+  color: ${(props: any) => props.theme.colors.textAlt};
 `;
 
 type ProgressBarBackProps = {
@@ -71,17 +72,16 @@ type ProgressBarBackProps = {
 export const ProgressBarBack = styled.View<ProgressBarBackProps>`
   width: 100%;
   height: ${(props: any) => props.height ?? "6px"};
-  /* background-color: #f3f3f3; */
   border-radius: 10px;
-  /* overflow: hidden; */
+  overflow: hidden;
 `;
 
 type ProgressBarFrontProps = {
-  percent: string;
+  percent: number;
 };
 
 export const ProgressBarFront = styled.View<ProgressBarFrontProps>`
-  width: ${(props: any) => props.percent};
+  width: ${(props: any) => `${props.percent}%`};
   height: 100%;
   background-color: ${(props: any) => props.theme.colors.primary};
   border-radius: 10px;
